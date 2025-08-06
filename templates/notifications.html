@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="/static/css/notifications.css"> <!-- Optional CSS -->
+</head>
+<body>
+    <h1>Notifications</h1>
+    <div id="notifications-list">
+        <!-- Notifications will be loaded here -->
+    </div>
+
+    <script>
+        async function loadNotifications() {
+            try {
+                const token = localStorage.getItem('access_token');
+                const response = await fetch('/notifications', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const notifications = await response.json();
+                    const listContainer = document.getElementById('notifications-list');
+
+                    if (notifications.length === 0) {
+                        listContainer.innerHTML = '<p>No notifications found.</p>';
+                        return;
+                    }
+
+                    notifications.forEach(notif => {
+                        const notifElem = document.createElement('div');
+                        notifElem.classList.add('notification-item');
+                        notifElem.innerHTML = `
+                            <p>${notif.message}</p>
+                            <small>${notif.created_at}</small>
+                            <button onclick="markAsRead(${notif.id})">Mark as Read</button>
+                            <hr>
+                        `;
+                        listContainer.appendChild(notifElem);
+                    });
+                } else {
+                    console.error('Failed to fetch notifications');
+                }
+            } catch (err) {
+                console.error('Error loading notifications:', err);
+            }
+        }
+
+        async function markAsRead(notificationId) {
+            const token = localStorage.getItem('access_token');
+            await fetch(`/notifications/${notificationId}/read`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            alert('Notification marked as read');
+            window.location.reload();
+        }
+
+        // Load notifications on page load
+        window.onload = loadNotifications;
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+    margin: 0;
+}
+
+#notifications-list {
+    width: 80%;
+    margin: 20px auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+.notification-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.notification-item.read {
+    background-color: #e9ecef;
+    color: #6c757d;
+}
+
+button.mark-read {
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button.mark-read:hover {
+    background-color: #218838;
+}

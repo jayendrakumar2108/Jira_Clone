@@ -1,0 +1,97 @@
+body {
+    background: #f4f6f9;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #172B4D;
+    margin-bottom: 0.5em;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border: 1.5px solid #dfe1e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9fafb;
+    transition: border 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: #2684FF;
+    outline: none;
+}
+
+button, .btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(120deg, #0052CC, #2684FF);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(38,132,255,0.07);
+}
+button:hover, .btn:hover {
+    background: linear-gradient(120deg, #0747a6, #1d6ae5);
+    box-shadow: 0 4px 16px rgba(38,132,255,0.13);
+}
+
+.card, .modal-content {
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    border: none;
+}
+
+.badge {
+    border-radius: 8px;
+    font-size: 0.95em;
+    padding: 0.4em 0.9em;
+    font-weight: 600;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #f3f4f6;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 8px;
+}
+body.jira-bg {
+    background: linear-gradient(135deg, #0052CC 0%, #2684FF 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    padding: 2rem 2.5rem;
+    width: 350px;
+    text-align: center;
+}
+.jira-title {
+    color: #0052CC;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+#loginMsg {
+    margin-top: 1rem;
+    color: #e74c3c;
+    font-weight: bold;
+} 

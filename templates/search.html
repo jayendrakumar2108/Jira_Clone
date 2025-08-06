@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Issues | JiraClone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f6f7fb; }
+        .sidebar-link.active { background: #e5edfa; color: #2563eb; }
+        .sidebar-link { transition: background 0.2s, color 0.2s; }
+        @media (max-width: 900px) {
+            .ml-64 { margin-left: 0 !important; }
+            aside { display: none; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md flex flex-col justify-between min-h-screen fixed left-0 top-0 z-20">
+        <div>
+            <div class="px-6 py-6 flex items-center text-xl font-bold text-blue-700">
+                <span class="mr-2">🎯</span> JiraClone
+            </div>
+            <nav class="flex flex-col gap-1 mt-2">
+                <a href="/dashboard" class="sidebar-link flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-base font-medium"><span class="mr-3">🏠</span> Dashboard</a>
+                <a href="/board.html?project=1" class="sidebar-link flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-base font-medium"><span class="mr-3">📁</span> Board</a>
+                <a href="/search" class="sidebar-link active flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-base font-medium"><span class="mr-3">🔍</span> Search Issues</a>
+                <a href="/messages.html" class="sidebar-link flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-base font-medium"><span class="mr-3">💬</span> Messages</a>
+                <a href="/admin.html" class="sidebar-link flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-base font-medium"><span class="mr-3">⚙</span> Admin</a>
+            </nav>
+        </div>
+        <div class="px-6 py-4 border-t flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-lg font-bold"> <span>👤</span> </div>
+            <div>
+                <div class="font-semibold text-gray-800" id="sidebar-username">User</div>
+                <a href="/logout" class="text-blue-600 text-sm hover:underline">Logout</a>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 ml-64 flex flex-col items-center justify-center py-12 px-4">
+        <div class="w-full max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Search Issues</h1>
+            <p class="text-gray-500 mb-6">Find issues by keywords, assignee, priority, or type.</p>
+            <div class="flex gap-2 mb-6">
+                <input type="text" class="flex-1 border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="Search issues...">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-2 transition-all">Search</button>
+            </div>
+            <div class="mb-6 flex gap-4">
+                <select class="border rounded-lg px-3 py-2">
+                    <option>All Assignees</option>
+                </select>
+                <select class="border rounded-lg px-3 py-2">
+                    <option>All Priorities</option>
+                </select>
+                <select class="border rounded-lg px-3 py-2">
+                    <option>All Types</option>
+                </select>
+            </div>
+            <div class="mt-8">
+                <div class="text-gray-400 text-center">No results yet. Use the search above.</div>
+            </div>
+        </div>
+    </main>
+    <script>
+    // Optionally, set username in sidebar
+    fetch('/api/me', { headers: { 'Authorization': 'Bearer ' + (localStorage.getItem('token') || '') } })
+        .then(r => r.json())
+        .then(u => {
+            document.getElementById('sidebar-username').textContent = u.name || 'User';
+        });
+    </script>
+</body>
+</html> 

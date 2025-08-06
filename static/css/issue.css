@@ -1,0 +1,286 @@
+body.jira-bg {
+  background: #f4f5f7;
+  font-family: 'Inter', Arial, sans-serif;
+}
+.issue-main-modern {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  align-items: flex-start;
+}
+.issue-details-card {
+  flex: 2;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 2.5rem 2rem;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.issue-title-main {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a2636;
+}
+.issue-meta-modern {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.8em;
+  border-radius: 999px;
+  font-size: 0.95em;
+  font-weight: 600;
+  margin-right: 0.3em;
+}
+.badge-type { background: #e3e9f7; color: #2d6cdf; }
+.badge-status { background: #f7e3e3; color: #d14343; }
+.badge-priority { background: #ffe3e3; color: #d14343; }
+
+.issue-section-modern {
+  margin-bottom: 1.2rem;
+}
+.section-label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.2em;
+}
+.section-value {
+  color: #222;
+  font-size: 1.08em;
+}
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9em 0;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 1.5rem;
+}
+.btn-primary:hover {
+  background: #1746a2;
+}
+.full-width {
+  width: 100%;
+}
+.issue-sidebar-modern {
+  flex: 1;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.sidebar-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 1.5rem 1.2rem;
+  margin-bottom: 1rem;
+}
+.sidebar-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a2636;
+}
+.comments-list-modern {
+  margin-bottom: 1rem;
+}
+.comment-form-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.input-modern {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.7em 1em;
+  font-size: 1em;
+  resize: vertical;
+  font-family: inherit;
+}
+.btn-secondary {
+  background: #e5e7eb;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5em;
+  transition: background 0.15s;
+}
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+.attachments-list-modern {
+  margin-bottom: 0.7rem;
+  color: #888;
+  font-size: 0.98em;
+}
+.attachment-form-modern {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+.activity-list-modern {
+  color: #555;
+  font-size: 0.98em;
+}
+.jira-layout {
+  display: flex;
+  min-height: 100vh;
+}
+.jira-sidebar-fixed {
+  width: 220px;
+  background: #f7f8fa;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.sidebar-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.jira-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 2rem;
+}
+.sidebar-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.jira-main-content {
+  margin-left: 220px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0 2rem 0;
+}
+.logout-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 2em;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background 0.15s;
+}
+.logout-btn:hover {
+  background: #1746a2;
+}
+.back-link {
+  color: #2563eb;
+  text-decoration: underline;
+  font-size: 1em;
+  margin-bottom: 2rem;
+  display: block;
+}
+/* Assignee dropdown styles */
+.assignee-select {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  margin-right: 1em;
+  margin-top: 0.2em;
+}
+.edit-actions-row {
+  display: flex;
+  gap: 1em;
+  margin-top: 1.5em;
+}
+.btn-cancel {
+  background: #e5e7eb;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9em 2em;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-cancel:hover {
+  background: #cbd5e1;
+}
+.badge {
+  margin-right: 0.7em;
+  margin-bottom: 0.2em;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  width: 100%;
+}
+.sidebar-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 0.5em 0.8em;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  transition: background 0.15s;
+  width: 100%;
+}
+.sidebar-link:hover {
+  background: #e6edfa;
+}
+.sidebar-spacer {
+  flex: 1;
+}
+.sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+.user-avatar-large {
+  font-size: 2.2em;
+  margin-bottom: 0.2em;
+}
+@media (max-width: 900px) {
+  .issue-main-modern { flex-direction: column; }
+  .issue-sidebar-modern { min-width: 0; }
+  .jira-layout { flex-direction: column; }
+  .jira-sidebar-fixed { position: static; width: 100%; min-height: unset; border-right: none; border-bottom: 1px solid #e5e7eb; }
+  .jira-main-content { margin-left: 0; padding: 1rem 0; }
+}
+@media (max-width: 600px) {
+  .issue-main-modern { padding: 0 0.5rem; }
+  .issue-details-card, .issue-sidebar-modern, .sidebar-card { min-width: 0; padding: 1rem; }
+} 
